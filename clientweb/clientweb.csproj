@@ -160,6 +160,8 @@
     <Content Include="images\cargo_delivery_small.jpg" />
     <Content Include="images\cargo_sea_big.jpg" />
     <Content Include="images\cargo_sea_small.jpg" />
+    <Content Include="images\hero_1.jpg" />
+    <Content Include="images\hero_2.jpg" />
     <Content Include="images\person_1.jpg" />
     <Content Include="images\person_2.jpg" />
     <Content Include="images\person_3.jpg" />
