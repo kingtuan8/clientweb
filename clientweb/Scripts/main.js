@@ -251,23 +251,30 @@ jQuery(document).ready(function($) {
 	siteSticky();
 
 	// navigation
-  var OnePageNavigation = function() {
-    var navToggler = $('.site-menu-toggle');
+    var OnePageNavigation = function () {
+        //var navToggler = $('.site-menu-toggle');
 
-   	$("body").on("click", ".main-menu li a[href^='#'], .smoothscroll[href^='#'], .site-mobile-menu .site-nav-wrap li a[href^='#']", function(e) {
-      e.preventDefault();
+        //$("body").on("click", ".main-menu li a[href^='#'], .smoothscroll[href^='#'], .site-mobile-menu .site-nav-wrap li a[href^='#']", function (e) {
+        //    e.preventDefault();
 
-      var hash = this.hash;
+        //    var hash = this.hash;
 
-      $('html, body').animate({
-        'scrollTop': $(hash).offset().top - 50
-      }, 600, 'easeInOutExpo', function() {
-        // window.location.hash = hash;
+        //    $('html, body').animate({
+        //        'scrollTop': $(hash).offset().top - 50
+        //    }, 600, 'easeInOutExpo', function () {
+        //        // window.location.hash = hash;
 
-      });
+        //    });
+        //});
 
-    });
-  };
+        $('.gototop').on('click', function () {
+            $('html, body').animate({
+                'scrollTop': $('body').offset().top
+            }, 600, 'easeInOutExpo');
+        });
+
+
+    };
   OnePageNavigation();
 
   var siteScroll = function() {
@@ -278,11 +285,17 @@ jQuery(document).ready(function($) {
 
   		var st = $(this).scrollTop();
 
-  		if (st > 100) {
-  			$('.js-sticky-header').addClass('shrink');
-  		} else {
-  			$('.js-sticky-header').removeClass('shrink');
-  		}
+            if (st > 100) {
+                $('.js-sticky-header').addClass('shrink');
+            } else {
+                $('.js-sticky-header').removeClass('shrink');
+            }
+
+            if (st > 200) {
+                $('.gototop').addClass('active');
+            } else {
+                $('.gototop').removeClass('active');
+            }
 
   	}) 
 
@@ -290,30 +303,56 @@ jQuery(document).ready(function($) {
   siteScroll();
 
 
-  var counter = function() {
-		
-		$('#about-section').waypoint( function( direction ) {
+    var counter = function () {
 
-			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
+        $('#about-section').waypoint(function (direction) {
 
-				var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',')
-				$('.number > span').each(function(){
-					var $this = $(this),
-						num = $this.data('number');
-					$this.animateNumber(
-					  {
-					    number: num,
-					    numberStep: comma_separator_number_step
-					  }, 7000
-					);
-				});
-				
-			}
+            if (direction === 'down' && !$(this.element).hasClass('ftco-animated')) {
 
-		} , { offset: '95%' } );
+                var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',')
+                $('.number > span').each(function () {
+                    var $this = $(this),
+                        num = $this.data('number');
+                    $this.animateNumber(
+                        {
+                            number: num,
+                            numberStep: comma_separator_number_step
+                        }, 7000
+                    );
+                });
 
-	}
-	counter();
+            }
+
+        }, { offset: '95%' });
+
+    };
+
+    //var siteScroll = function () {
+
+
+
+    //    $(window).scroll(function () {
+
+    //        var st = $(this).scrollTop();
+
+    //        if (st > 100) {
+    //            $('.js-sticky-header').addClass('shrink');
+    //        } else {
+    //            $('.js-sticky-header').removeClass('shrink');
+    //        }
+
+
+    //        if (st > 200) {
+    //            $('.gototop').addClass('active');
+    //        } else {
+    //            $('.gototop').removeClass('active');
+    //        }
+
+    //    })
+
+    //};
+    counter();
+    //siteScroll();
 
 
 
