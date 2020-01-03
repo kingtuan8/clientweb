@@ -112,6 +112,49 @@ jQuery(document).ready(function($) {
             navText: ['<span class="icon-keyboard_arrow_left">', '<span class="icon-keyboard_arrow_right">']
         });
 
+        if ($('.owl-all').length > 0) {
+            $('.owl-all').owlCarousel({
+                center: false,
+                items: 1,
+                loop: false,
+                stagePadding: 0,
+                margin: 0,
+                autoplay: false,
+                nav: false,
+                dots: true,
+                touchDrag: true,
+                mouseDrag: true,
+                smartSpeed: 1000,
+                navText: ['<span class="icon-arrow_back">', '<span class="icon-arrow_forward">'],
+                responsive: {
+                    768: {
+                        margin: 30,
+                        nav: false,
+                        responsiveRefreshRate: 10,
+                        items: 1
+                    },
+                    992: {
+                        margin: 30,
+                        stagePadding: 0,
+                        nav: false,
+                        responsiveRefreshRate: 10,
+                        touchDrag: false,
+                        mouseDrag: false,
+                        items: 3
+                    },
+                    1200: {
+                        margin: 30,
+                        stagePadding: 0,
+                        nav: false,
+                        responsiveRefreshRate: 10,
+                        touchDrag: false,
+                        mouseDrag: false,
+                        items: 3
+                    }
+                }
+            });
+        }
+
 
 	
 

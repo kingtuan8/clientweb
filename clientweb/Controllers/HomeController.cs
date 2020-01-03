@@ -26,5 +26,10 @@ namespace clientweb.Controllers
 
             return View();
         }
+
+        public ActionResult EPort()
+        {
+            return View();
+        }
     }
 }

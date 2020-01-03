@@ -1,4 +1,11 @@
 ﻿@{
     ViewBag.Title = "Home";
 }
- 
+
+@Html.Partial("_slide")
+
+    <div class="site-wrap" id="home-section">
+        @Html.Partial("_services")
+
+        @Html.Partial("_contact")
+    </div>
