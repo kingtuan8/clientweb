@@ -1258,9 +1258,10 @@ h1, h2, h3, h4, h5,
   .block__35630 h3 {
     color: #000;
     font-size: 1.4rem;text-align:center; }
-  .block__35630:hover {
-    background-color: #fff;
-    border-color: #ff8b00; }
+    .block__35630:hover {
+        background-color: #fff;
+        border-color: #007bff;
+    }
 
   .block__35630 .icon 
   {
