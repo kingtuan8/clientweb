@@ -259,13 +259,20 @@ a {
 h1, h2, h3, h4, h5,
 .h1, .h2, .h3, .h4, .h5 {
   font-family: "Oswald", sans-serif;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+
+}
+
+h5, .h5 {
+    color: #007bff;
+}
 
 .border-2 {
   border-width: 2px; }
 
 .text-black {
-  color: #000 !important; }
+    color: #007bff !important;
+}
 
 .bg-black {
   background: #000 !important; }
@@ -504,7 +511,9 @@ h1, h2, h3, h4, h5,
             color: #ff8b00 !important;
             display: inline-block;
             text-decoration: none !important;
-            text-transform:uppercase;
+            text-transform: uppercase;
+            font-family: "Oswald", sans-serif;
+            font-size: 19px;
         }
         .site-navbar .site-navigation .site-menu > li > a:hover {
           color: #377aff !important; }
@@ -1457,7 +1466,7 @@ h1, h2, h3, h4, h5,
 
     .gototop.active span
     {
-        font-size:25px;
+        font-size:20px;
         font-weight:bold;
         color:#ff8b00;
     }

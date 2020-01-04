@@ -3,5 +3,69 @@
     ViewBag.Title = "EPort";
 }
 
-<h2>EPort</h2>
+    <div class="body-content">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <h5 class="card-header">
+                        Đăng Nhập
+                    </h5>
+                    <div class="card-body">
+
+                        <div class="formlogin">
+                            <form>
+                                <div class="form-group">
+                                    <label for="txtUserName">Tài khoản</label>
+                                    <input type="text" class="form-control" id="txtUserName">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="txtPassWord">Mật khẩu</label>
+                                    <input type="password" class="form-control" id="txtPassWord">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+
+                                <a href="#" style="margin-left:28px;">Quên mật khẩu ?</a>
+
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 12px;">
+                    <h5 class="card-header">
+                        Tính Năng
+                    </h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <a href="#">Tra cứu container</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">
+                                Tra cứu công nợ
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">
+                                Thông tin tài khoản
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-md-9">
+                <div class="card">
+                    <h5 class="card-header">
+                        Trang Chủ
+                    </h5>
+                    <div class="card-body">
+                       @Html.Partial("_review")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 

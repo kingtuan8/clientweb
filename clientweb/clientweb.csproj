@@ -160,6 +160,8 @@
     <Content Include="images\cargo_delivery_small.jpg" />
     <Content Include="images\cargo_sea_big.jpg" />
     <Content Include="images\cargo_sea_small.jpg" />
+    <Content Include="images\happy.jpg" />
+    <Content Include="images\happy2.jpg" />
     <Content Include="images\hero_1.jpg" />
     <Content Include="images\hero_2.jpg" />
     <Content Include="images\person_1.jpg" />
@@ -326,6 +328,7 @@
     <Content Include="Views\Home\_contact.cshtml" />
     <Content Include="Views\Shared\_footer.cshtml" />
     <Content Include="Views\Home\_services.cshtml" />
+    <Content Include="Views\Shared\_review.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
