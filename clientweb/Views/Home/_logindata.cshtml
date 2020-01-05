@@ -1,0 +1,68 @@
+﻿
+@if (Session["uname"] == null)
+{
+    <div class="card">
+        <h5 class="card-header">
+            <span id="formlog">
+                Đăng Nhập
+            </span>
+        </h5>
+        <div class="card-body">
+
+            <div class="formlogin">
+                <div class="form-group">
+                    <label for="txtUserName">Tài khoản</label>
+                    <input type="text" class="form-control" id="txtUserName">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtPassWord">Mật khẩu</label>
+                    <input type="password" class="form-control" id="txtPassWord">
+                </div>
+
+                <button type="button" id="btnLogin" class="btn btn-primary">Đăng Nhập</button>
+
+                <a href="#" style="margin-left:28px;">Quên mật khẩu ?</a>
+            </div>
+
+        </div>
+    </div>
+}
+else
+{
+    <div class="card">
+        <h5 class="card-header">
+            Tài khoản
+        </h5>
+        <ul class="list-group list-group-flush">
+
+            <li class="list-group-item">
+                Xin chào,
+                <a href="#">@Session["uname"]</a>
+            </li>
+
+            <li class="list-group-item">
+                <i class="icon-long-arrow-right" aria-hidden="true"></i> <a href="#">Tra cứu container</a>
+            </li>
+            <li class="list-group-item">
+                <i class="icon-long-arrow-right" aria-hidden="true"></i>
+                <a href="#">
+                    Tra cứu công nợ
+                </a>
+            </li>
+            <li class="list-group-item">
+                <i class="icon-long-arrow-right" aria-hidden="true"></i>
+                <a href="#">
+                    Thông tin tài khoản
+                </a>
+            </li>
+            <li class="list-group-item">
+                <i class="icon-long-arrow-right" aria-hidden="true"></i>
+                <a href="~/home/LogOff" style="font-weight:bold; color:#f00;">
+                    Thoát
+                </a>
+            </li>
+        </ul>
+    </div>
+}
+

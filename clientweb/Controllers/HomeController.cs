@@ -64,7 +64,14 @@ namespace clientweb.Controllers
             return Json(flag, JsonRequestBehavior.AllowGet);
         }
 
-        
+        public ActionResult LogOff()
+        {
+            Session["uname"] = null;
+            Session.Abandon();
+            return RedirectToAction("index", "home");
+        }
+
+
 
     }
 }

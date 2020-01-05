@@ -371,6 +371,7 @@
     <Content Include="Views\Home\_services.cshtml" />
     <Content Include="Views\Shared\_review.cshtml" />
     <Content Include="Views\Home\_news.cshtml" />
+    <Content Include="Views\Home\_logindata.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
