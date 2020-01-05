@@ -1,0 +1,57 @@
+﻿@model IEnumerable<clientweb.ModelData.Container>
+@{
+    ViewBag.Title = "Tra cứu Container"; 
+    Layout = "~/Views/Shared/_layouteport.cshtml";
+}
+
+    <div class="card">
+        <h5 class="card-header">
+            Trang Chủ <i class="icon-long-arrow-right" aria-hidden="true"></i> Container
+        </h5>
+        <div class="card-body">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            Kế hoạch
+                        </th>
+                        <th>
+                            Booking
+                        </th>
+                        <th>
+                            Container
+                        </th>
+                        <th>
+                            Tình trạng
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var q in Model)
+                    {
+                        <tr>
+                            <td>
+                                @q.Booking.PlanDate.Value.ToString("dd-MM-yyyy")
+                            </td>
+                            <td>
+                                @q.Booking.BookingNo
+                            </td>
+                            <td>
+                                @q.ContainerNo
+                            </td>
+                            <td>
+                                @if (q.IsTransported == true)
+                                {
+                                    <span class="badge badge-success">Đang chạy</span>
+                                }
+                                else
+                                {
+                                    <span class="badge badge-danger">Đang điều xe</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>

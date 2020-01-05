@@ -41,7 +41,7 @@
                         alert("Tài khoản này không phải là một khách hàng !");
                     }
                     else {
-                        window.location.href = "/home/eport";
+                        window.location.href = "/customers/eport";
                     }
                     
 

@@ -129,6 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -363,7 +364,7 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Home\EPort.cshtml" />
+    <Content Include="Views\Customers\EPort.cshtml" />
     <Content Include="Views\Shared\_header.cshtml" />
     <Content Include="Views\Home\_slide.cshtml" />
     <Content Include="Views\Home\_contact.cshtml" />
@@ -371,7 +372,13 @@
     <Content Include="Views\Home\_services.cshtml" />
     <Content Include="Views\Shared\_review.cshtml" />
     <Content Include="Views\Home\_news.cshtml" />
-    <Content Include="Views\Home\_logindata.cshtml" />
+    <Content Include="Views\Shared\_logindata.cshtml" />
+    <Content Include="Views\Customers\Container.cshtml" />
+    <Content Include="Views\Shared\_layouteport.cshtml" />
+    <Content Include="Views\Customers\Invoice.cshtml" />
+    <Content Include="Views\Home\Document.cshtml" />
+    <Content Include="Views\Home\Account.cshtml" />
+    <Content Include="Views\Home\GetPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

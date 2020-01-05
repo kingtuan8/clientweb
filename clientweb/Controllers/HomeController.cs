@@ -26,11 +26,6 @@ namespace clientweb.Controllers
             return View();
         }
 
-        public ActionResult EPort()
-        {
-            return View();
-        }
-
         public JsonResult  Login(string uname, string pword)
         {
             string flag = "OK";
@@ -58,6 +53,7 @@ namespace clientweb.Controllers
                 {
                     flag = "DONE";
                     Session["uname"] = x.UserName;
+                    Session["userid"] = x.UserID;
                 }
             }
 
@@ -68,7 +64,40 @@ namespace clientweb.Controllers
         {
             Session["uname"] = null;
             Session.Abandon();
-            return RedirectToAction("index", "home");
+            return RedirectToAction("eport", "customers");
+        }
+
+        public ActionResult Document()
+        {
+            if (Session["uname"] == null)
+            {
+                return RedirectToAction("eport", "customers");
+            }
+
+            return View();
+        }
+
+        public ActionResult Account()
+        {
+            if (Session["uname"] == null)
+            {
+                return RedirectToAction("eport", "customers");
+            }
+
+            return View();
+        }
+
+        public ActionResult GetPassword()
+        {
+            if (Session["uname"] == null)
+            {
+                return View();                
+            }
+            else
+            {
+                return RedirectToAction("eport", "customers");
+            }
+            
         }
 
 

@@ -22,7 +22,7 @@
 
                 <button type="button" id="btnLogin" class="btn btn-primary">Đăng Nhập</button>
 
-                <a href="#" style="margin-left:28px;">Quên mật khẩu ?</a>
+                <a href="~/home/getpassword" style="margin-left:28px;">Quên mật khẩu ?</a>
             </div>
 
         </div>
@@ -38,22 +38,27 @@ else
 
             <li class="list-group-item">
                 Xin chào,
-                <a href="#">@Session["uname"]</a>
-            </li>
-
-            <li class="list-group-item">
-                <i class="icon-long-arrow-right" aria-hidden="true"></i> <a href="#">Tra cứu container</a>
+                <a href="~/home/account">@Session["uname"]</a>
             </li>
             <li class="list-group-item">
                 <i class="icon-long-arrow-right" aria-hidden="true"></i>
-                <a href="#">
+                <a href="~/home/account">
+                    Thông tin tài khoản
+                </a>
+            </li>
+            <li class="list-group-item">
+                <i class="icon-long-arrow-right" aria-hidden="true"></i> <a href="~/customers/container">Tra cứu container</a>
+            </li>
+            <li class="list-group-item">
+                <i class="icon-long-arrow-right" aria-hidden="true"></i>
+                <a href="~/customers/Invoice">
                     Tra cứu công nợ
                 </a>
             </li>
             <li class="list-group-item">
                 <i class="icon-long-arrow-right" aria-hidden="true"></i>
-                <a href="#">
-                    Thông tin tài khoản
+                <a href="~/home/document">
+                    Tài liệu hướng dẫn
                 </a>
             </li>
             <li class="list-group-item">
