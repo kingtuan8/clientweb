@@ -38,3 +38,11 @@ input.error
     margin-bottom: 1rem !important;
     padding-top:2rem !important;
 }
+.list-group .list-group-item i{
+    color: #837507;
+    margin-right: 6px;
+}
+.list-group .list-group-item a:hover
+{
+    color:#f00;
+}

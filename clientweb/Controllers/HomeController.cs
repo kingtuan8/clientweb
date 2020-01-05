@@ -31,14 +31,14 @@ namespace clientweb.Controllers
             return View();
         }
 
-        public JsonResult  Login(string username, string password)
+        public JsonResult  Login(string uname, string pword)
         {
             string flag = "OK";
 
-            //password = GetMD5Hash(password);
+            pword = Models.Helper.GetMD5Hash(pword);
 
 
-            var x = db.Users.FirstOrDefault(q => q.UserName == username && q.HashPass == password);
+            var x = db.Users.FirstOrDefault(q => q.UserName == uname && q.HashPass == pword);
 
             if(x == null)
             {

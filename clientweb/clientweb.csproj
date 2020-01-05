@@ -160,6 +160,7 @@
     <Compile Include="ModelData\User.cs" />
     <Compile Include="ModelData\UsersIsCustomer.cs" />
     <Compile Include="ModelData\UsersIsEmployee.cs" />
+    <Compile Include="Models\Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -373,7 +374,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
