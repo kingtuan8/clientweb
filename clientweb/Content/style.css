@@ -1626,3 +1626,40 @@ h5, .h5 {
         font-weight: 200;
         font-style: italic;
     }
+
+
+.section-title {
+    color: #007bff;
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.h-entry h2 {
+    font-size: 20px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 300 !important;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+
+}
+    .h-entry h2 a {
+        color: #3471e0 !important;
+    }
+.h-entry img {
+    margin-bottom: 30px;
+}
+
+.h-entry .meta {
+    color: #b3b3b3;
+    font-size: 14px;
+}
+#news-section
+{
+    padding:24px 0 0 0;
+    margin-bottom:24px;
+}
+#contact-section
+{
+    padding-top:24px;
+}

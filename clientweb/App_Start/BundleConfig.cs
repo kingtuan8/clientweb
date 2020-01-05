@@ -21,8 +21,8 @@ namespace clientweb
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                  "~/Scripts/bootstrap.js", "~/Scripts/owl.carousel.min.js", "~/Scripts/jquery.sticky.js", "~/Scripts/jquery.waypoints.min.js",
-                  "~/Scripts/aos.js",
-            "~/Scripts/main.js"));
+                  "~/Scripts/aos.js", "~/Scripts/main.js",
+            "~/Scripts/client.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

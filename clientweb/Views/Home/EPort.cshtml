@@ -6,14 +6,18 @@
     <div class="body-content">
         <div class="row">
             <div class="col-md-3">
-                <div class="card">
-                    <h5 class="card-header">
-                        Đăng Nhập
-                    </h5>
-                    <div class="card-body">
 
-                        <div class="formlogin">
-                            <form>
+                @if (Session["uname"] == null)
+                {
+                    <div class="card">
+                        <h5 class="card-header">
+                            <span id="formlog">
+                                Đăng Nhập
+                            </span>
+                        </h5>
+                        <div class="card-body">
+
+                            <div class="formlogin">
                                 <div class="form-group">
                                     <label for="txtUserName">Tài khoản</label>
                                     <input type="text" class="form-control" id="txtUserName">
@@ -24,36 +28,45 @@
                                     <input type="password" class="form-control" id="txtPassWord">
                                 </div>
 
-                                <button type="submit" class="btn btn-primary">Đăng Nhập</button>
+                                <button type="button" id="btnLogin" class="btn btn-primary">Đăng Nhập</button>
 
                                 <a href="#" style="margin-left:28px;">Quên mật khẩu ?</a>
+                            </div>
 
-                            </form>
                         </div>
-
                     </div>
-                </div>
+                }
+                else
+                {
+                    <div class="card" style="margin-top: 12px;">
+                        <h5 class="card-header">
+                            Tài khoản
+                        </h5>
+                        <ul class="list-group list-group-flush">
 
-                <div class="card" style="margin-top: 12px;">
-                    <h5 class="card-header">
-                        Tính Năng
-                    </h5>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <a href="#">Tra cứu container</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#">
-                                Tra cứu công nợ
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="#">
-                                Thông tin tài khoản
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                            <li class="list-group-item">
+                                Xin chào,
+                                <a href="#">@Session["uname"]</a>
+                            </li>
+
+                            <li class="list-group-item">
+                                <a href="#">Tra cứu container</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#">
+                                    Tra cứu công nợ
+                                </a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="#">
+                                    Thông tin tài khoản
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                }
+
+
 
             </div>
             <div class="col-md-9">

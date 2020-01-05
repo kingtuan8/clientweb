@@ -1,11 +1,12 @@
-﻿using System.Security.Cryptography;
-using System.Text;
+﻿using clientweb.ModelData;
 using System.Web.Mvc;
+using System.Linq;
 
 namespace clientweb.Controllers
 {
     public class HomeController : Controller
     {
+        private DataEntity db = new DataEntity();
         public ActionResult Index()
         {
             return View();
@@ -34,21 +35,36 @@ namespace clientweb.Controllers
         {
             string flag = "OK";
 
+            //password = GetMD5Hash(password);
+
+
+            var x = db.Users.FirstOrDefault(q => q.UserName == username && q.HashPass == password);
+
+            if(x == null)
+            {
+                flag = "NOTFOUND";
+            }
+            else
+            {
+                if(x.Active == false)
+                {
+                    flag = "ACCDISABLED";
+                }
+                else if(x.UsersIsCustomer == null)
+                {
+                    flag = "NOTCUSTOMER";
+                }
+                else
+                {
+                    flag = "DONE";
+                    Session["uname"] = x.UserName;
+                }
+            }
 
             return Json(flag, JsonRequestBehavior.AllowGet);
         }
 
-        public static string GetMD5Hash(string value)
-        {
-            MD5 md5Hasher = MD5.Create();
-            byte[] data = md5Hasher.ComputeHash(Encoding.Default.GetBytes(value));
-            StringBuilder sBuilder = new StringBuilder();
-            for (int i = 0; i < data.Length; i++)
-            {
-                sBuilder.Append(data[i].ToString("x2"));
-            }
-            return sBuilder.ToString();
-        }
+        
 
     }
 }
