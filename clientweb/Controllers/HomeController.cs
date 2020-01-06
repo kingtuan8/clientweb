@@ -1,6 +1,7 @@
 ﻿using clientweb.ModelData;
 using System.Web.Mvc;
 using System.Linq;
+using System;
 
 namespace clientweb.Controllers
 {
@@ -73,8 +74,10 @@ namespace clientweb.Controllers
             {
                 return RedirectToAction("eport", "customers");
             }
-
-            return View();
+            else
+            {
+                return View();
+            }            
         }
 
         public ActionResult Account()
@@ -83,8 +86,12 @@ namespace clientweb.Controllers
             {
                 return RedirectToAction("eport", "customers");
             }
-
-            return View();
+            else
+            {
+                int userid = Convert.ToInt32(Session["userid"]);
+                var model = db.Users.Find(userid).UsersIsCustomer.Customer;
+                return View(model);
+            }            
         }
 
         public ActionResult GetPassword()
@@ -99,6 +106,44 @@ namespace clientweb.Controllers
             }
             
         }
+
+        public JsonResult ChangePassword(string oldpass, string newpass)
+        {
+            string flag = "";
+
+            if(Session["uname"] == null)
+            {
+                flag = "NULL";
+            }
+            else
+            {
+                int userid = Convert.ToInt32(Session["userid"]);
+                var user = db.Users.Find(userid);
+
+                var hash = Models.Helper.GetMD5Hash(oldpass);
+
+                if (hash != user.HashPass)
+                {
+                    flag = "WRONGOLD";
+                }
+                else 
+                {
+                    hash = Models.Helper.GetMD5Hash(newpass);
+
+                    user.HashPass = hash;
+
+                    flag = "DONE";
+
+                    db.SaveChanges();
+                }
+            }
+
+
+
+            return Json(flag, JsonRequestBehavior.AllowGet);
+        }
+
+
 
 
 

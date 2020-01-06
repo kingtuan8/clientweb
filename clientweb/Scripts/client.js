@@ -60,4 +60,56 @@
 
     });
 
+    $(document).on('click', "#btnUpdatepassword", function(e) {
+
+        var newpass = $("#txtNewPass").val().trim();
+        var confirm = $("#txtConfirm").val().trim();
+        var oldpass = $("#txtOldPass").val().trim();
+
+        if (newpass != confirm) {
+
+            alert("Mật khẩu xác nhận không trùng nhau !");
+
+        }
+        else {
+            $.ajax({
+                url: '/home/ChangePassword',
+                contentType: 'application/json; charset=utf-8',
+                data: { newpass: newpass, oldpass: oldpass },
+                type: 'GET',
+                dataType: 'json'
+                , success: function(data) {
+
+                    if (data == "NULL") {
+                        alert("Phiên làm việc kết thúc ! Vui lòng thử lại !");
+
+                        setTimeout(function() {
+                            window.location.href = "/customers/eport";
+                        }, 1500);
+                    }
+                    else if (data == "WRONGOLD") {
+                        alert("Mật khẫu cũ không chính xác ! Vui lòng thử lại !");
+                    }
+                   
+                    else {
+                        alert("Đổi mật khẩu thành công !");
+
+                        setTimeout(function() {
+                            window.location.href = "/home/account";
+                        }, 1500);
+                    }
+
+
+                },
+                error: function(xhr, status) {
+                    alert("Fail connect to system server. Please try again or check internet connection.");
+                },
+                complete: function(xhr, status) {
+
+                }
+            });
+        }
+
+    });
+
 });

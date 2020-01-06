@@ -1,4 +1,4 @@
-﻿
+﻿@model clientweb.ModelData.Customer
 @{
     ViewBag.Title = "Tài khoản";
     Layout = "~/Views/Shared/_layouteport.cshtml";
@@ -11,6 +11,90 @@
     </h5>
     <div class="card-body">
 
+        <h5 class="card-title">Thông tin tài khoản</h5>
+        <hr />
+
+        <div class="row" style="margin-bottom:29px;">
+            <div class="col-md-9">
+               <table class="table table-bordered">
+                   <tr>
+                       <th>
+                           Tài khoản
+                       </th>
+                       <td>                           
+                           <span class="text-info">
+                               @Session["uname"]
+                           </span>
+                       </td>
+                   </tr>
+                   <tr>
+                       <th>
+                           Khách hàng
+                       </th>
+                       <td>
+                           <span class="text-info">
+                               @Model.CustName
+                           </span>
+                       </td>
+                   </tr>
+                   <tr>
+                       <th>
+                           Email
+                       </th>
+                       <td>
+                           <span class="text-info">
+                               @Model.Email1 - @Model.Email2
+                           </span>
+                           
+                       </td>
+                   </tr>
+                   <tr>
+                       <th>
+                           Điện thoại
+                       </th>
+                       <td>
+                           <span class="text-info">
+                               @Model.PhoneNumber
+                           </span>
+                       </td>
+                   </tr>
+                   <tr>
+                       <th>
+                           Di động
+                       </th>
+                       <td>
+                           <span class="text-info">
+                               @Model.MobilePhone
+                           </span>
+                       </td>
+                   </tr>
+               </table>
+            </div>
+        </div>        
+
+        <div class="row" id="changepassform">
+            <div class="col-md-4">
+                <h5 class="card-title">Đổi mật khẩu</h5>
+                <hr />
+                <div class="form-group">
+                    <label for="txtOldPass">Mật khẩu cũ</label>
+                    <input type="password" class="form-control" id="txtOldPass">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtNewPass">Mật khẩu mới</label>
+                    <input type="password" class="form-control" id="txtNewPass">
+                </div>
+
+                <div class="form-group">
+                    <label for="txtConfirm">Xác nhận mật khẩu</label>
+                    <input type="password" class="form-control" id="txtConfirm">
+                </div>
+
+                <button type="button" class="btn btn-primary" id="btnUpdatepassword">Cập Nhập</button>
+            </div>
+        </div>
     </div>
 </div>
 
+ 

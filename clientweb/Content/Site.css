@@ -25,7 +25,7 @@ textarea {
     /*max-width: 280px;*/
 }
 
-.formlogin input[type="text"], .formlogin input[type="password"] {
+.formlogin input[type="text"], .formlogin input[type="password"], #changepassform input[type="password"]{
     height: unset;
 }
 
@@ -45,4 +45,10 @@ input.error
 .list-group .list-group-item a:hover
 {
     color:#f00;
+}
+.btn-group-xs > .btn, .btn-xs {
+    padding: .50rem .4rem;
+    font-size: .875rem;
+    line-height: .5;
+    border-radius: .2rem;
 }
