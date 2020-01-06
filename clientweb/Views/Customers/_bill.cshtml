@@ -1,0 +1,114 @@
+﻿@model clientweb.ModelData.ContainerInvoice
+@using clientweb.Models
+
+@{ 
+    int total = 0;
+    total += Convert.ToInt32(Model.TienNang) + Convert.ToInt32(Model.TienHa) + Convert.ToInt32(Model.TienLocalCharge) + Convert.ToInt32(Model.TienHDKhac);
+    total += Convert.ToInt32(Model.PhiPhatSinh) + Convert.ToInt32(Model.PhiNoInvoice) + Convert.ToInt32(Model.CuocContDepot) + Convert.ToInt32(Model.CuocHangTau);
+}
+
+
+    <table class="table table-bordered table-sm table-striped table-hover">
+        <tr>
+            <th>
+                Hóa đơn nâng
+            </th>
+            <td>
+                <span class="text-primary">@Model.HoaDonNang</span>
+            </td>
+            <th>
+                Thành tiền
+            </th>
+            <td>
+                <span class="text-warning">@Helper.GetCurrency(Model.TienNang)</span>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Hóa đơn hạ
+            </th>
+            <td>
+                <span class="text-primary">@Model.HoaDonHa</span>
+            </td>
+            <th>
+                Thành tiền
+            </th>
+            <td>
+                <span class="text-warning">@Helper.GetCurrency(Model.TienHa)</span>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Phí nội bộ
+            </th>
+            <td>
+                <span class="text-primary">@Model.HoaDonLocalCharge</span>
+            </td>
+            <th>
+                Thành tiền
+            </th>
+            <td>
+                <span class="text-warning">@Helper.GetCurrency(Model.TienLocalCharge)</span>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Hóa đơn khác
+            </th>
+            <td>
+                <span class="text-primary">@Model.HoaDonKhac</span>
+            </td>
+            <th>
+                Thành tiền
+            </th>
+            <td>
+                <span class="text-warning">@Helper.GetCurrency(Model.TienHDKhac)</span>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Hóa đơn phát sinh
+            </th>
+            <td>
+                <span class="text-primary">@Model.HoaDonPhatSinh</span>
+            </td>
+            <th>
+                Thành tiền
+            </th>
+            <td>
+                <span class="text-warning">@Helper.GetCurrency(Model.PhiPhatSinh)</span>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Cước hãng tàu
+            </th>
+            <td>
+                <span class="text-warning">@Helper.GetCurrency(Model.CuocHangTau)</span>
+            </td>
+            <th>
+                cước container
+            </th>
+            <td>
+                <span class="text-warning">@Helper.GetCurrency(Model.CuocContDepot)</span>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Phí Invoice
+            </th>
+            <td colspan="3">
+                <span class="text-warning">@Helper.GetCurrency(Model.PhiNoInvoice)</span>
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <th>
+                <span class="text-danger">Tổng cộng</span>
+            </th>
+            <td>
+                <span class="text-danger">@Helper.GetCurrency(total.ToString())</span>
+            </td>
+            <td></td>
+        </tr>
+    </table>

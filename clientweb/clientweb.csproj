@@ -379,6 +379,7 @@
     <Content Include="Views\Home\Document.cshtml" />
     <Content Include="Views\Home\Account.cshtml" />
     <Content Include="Views\Home\GetPassword.cshtml" />
+    <Content Include="Views\Customers\_bill.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

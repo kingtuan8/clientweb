@@ -52,3 +52,11 @@ input.error
     line-height: .5;
     border-radius: .2rem;
 }
+span.xcont
+{
+    color:#c30;
+}
+table th
+{
+    color:#66b09b !important;
+}

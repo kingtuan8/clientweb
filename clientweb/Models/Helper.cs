@@ -20,5 +20,13 @@ namespace clientweb.Models
             }
             return sBuilder.ToString();
         }
+
+        public static string GetCurrency(string curr)
+        {
+            int c = Convert.ToInt32(curr);
+            return String.Format("vnd {0:#,##0}", c);
+        }
+
+        
     }
 }

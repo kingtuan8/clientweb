@@ -48,5 +48,12 @@ namespace clientweb.Controllers
         {
             return View();
         }
+
+        public PartialViewResult GetInvoiceContainer(int? containerid)
+        {
+            var model = db.ContainerInvoices.Find(containerid);
+
+            return PartialView("_bill", model);
+        }
     }
 }
