@@ -131,6 +131,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Controllers\ThreadingController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -192,6 +194,8 @@
     <Content Include="fonts\icomoon\style.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\blog_1.jpg" />
+    <Content Include="images\blog_2.jpg" />
     <Content Include="images\cargo_air_big.jpg" />
     <Content Include="images\cargo_air_small.jpg" />
     <Content Include="images\cargo_delivery_big.jpg" />
@@ -205,6 +209,8 @@
     <Content Include="images\img_1.jpg" />
     <Content Include="images\img_2.jpg" />
     <Content Include="images\img_3.jpg" />
+    <Content Include="images\img_4.jpg" />
+    <Content Include="images\img_5.jpg" />
     <Content Include="images\person_1.jpg" />
     <Content Include="images\person_2.jpg" />
     <Content Include="images\person_3.jpg" />
@@ -380,6 +386,11 @@
     <Content Include="Views\Home\Account.cshtml" />
     <Content Include="Views\Home\GetPassword.cshtml" />
     <Content Include="Views\Customers\_bill.cshtml" />
+    <Content Include="Views\Services\Index.cshtml" />
+    <Content Include="Views\Threading\Index.cshtml" />
+    <Content Include="Views\Threading\Local.cshtml" />
+    <Content Include="Views\Threading\Global.cshtml" />
+    <Content Include="Views\Home\Support.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

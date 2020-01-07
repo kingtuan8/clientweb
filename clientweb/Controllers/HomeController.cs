@@ -143,6 +143,11 @@ namespace clientweb.Controllers
             return Json(flag, JsonRequestBehavior.AllowGet);
         }
 
+        
+        public ActionResult Support()
+        {
+            return View();
+        }
 
 
 

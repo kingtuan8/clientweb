@@ -39,27 +39,32 @@
 
 
             <div class="site-logo">
-                <a href="/" class="text-black"><span class="text-primary" style="font-family:'Oswald'">TRAMANH</span></a>
+                <a href="/" class="text-black"><span class="text-primary" style="font-family:'Oswald'; padding-left:15px;">TRAMANH</span></a>
             </div>
 
             <div class="col-12">
                 <nav class="site-navigation text-right ml-auto " role="navigation">
 
                     <ul class="site-menu main-menu js-clone-nav ml-auto d-none d-lg-block">
+
                         <li><a href="~/customers/eport" class="nav-link">EPORT</a></li>
-                        <li><a href="#services-section" class="nav-link">Dịch Vụ</a></li>
+
+                        <li><a href="~/services" class="nav-link">Dịch Vụ</a></li>
+
+                        <li class="has-children">
+                            <a href="~/threading" class="nav-link">Tin Tức</a>
+                            <ul class="dropdown">
+                                <li><a href="~/threading/local">Tin nội bộ</a></li>
+                                <li><a href="~/threading/global">Tin trong ngành</a></li>
+                            </ul>
+                        </li>
 
 
+                        <li><a href="~/home/support" class="nav-link">Hỗ trợ</a></li>
 
+                        @*<li><a href="#contact-section" class="nav-link">Thư viện</a></li>*@
 
-                        <li><a href="#why-us-section" class="nav-link">Tin Tức</a></li>
-
-
-                        <li><a href="#contact-section" class="nav-link">Hỗ trợ</a></li>
-
-                        <li><a href="#contact-section" class="nav-link">Thư viện</a></li>
-
-                        <li><a href="#testimonials-section" class="nav-link">Giới Thiệu</a></li>
+                        <li><a href="~/home/about" class="nav-link">Giới Thiệu</a></li>
                     </ul>
                 </nav>
 
