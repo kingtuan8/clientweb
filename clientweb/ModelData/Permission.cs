@@ -22,6 +22,9 @@ namespace clientweb.ModelData
 
         public DateTime? Created { get; set; }
 
+        [StringLength(50)]
+        public string PermissionName { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PermissionRole> PermissionRoles { get; set; }
     }

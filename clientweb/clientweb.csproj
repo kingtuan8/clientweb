@@ -163,6 +163,12 @@
     <Compile Include="ModelData\User.cs" />
     <Compile Include="ModelData\UsersIsCustomer.cs" />
     <Compile Include="ModelData\UsersIsEmployee.cs" />
+    <Compile Include="ModelData\WEB_EmailRecieve.cs" />
+    <Compile Include="ModelData\WEB_GuestMessage.cs" />
+    <Compile Include="ModelData\WEB_Infomation.cs" />
+    <Compile Include="ModelData\WEB_Slide.cs" />
+    <Compile Include="ModelData\WEB_Thread.cs" />
+    <Compile Include="Models\DetailViewModel.cs" />
     <Compile Include="Models\Helper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -211,6 +217,7 @@
     <Content Include="images\img_3.jpg" />
     <Content Include="images\img_4.jpg" />
     <Content Include="images\img_5.jpg" />
+    <Content Include="images\logo.jpg" />
     <Content Include="images\person_1.jpg" />
     <Content Include="images\person_2.jpg" />
     <Content Include="images\person_3.jpg" />
@@ -391,6 +398,8 @@
     <Content Include="Views\Threading\Local.cshtml" />
     <Content Include="Views\Threading\Global.cshtml" />
     <Content Include="Views\Home\Support.cshtml" />
+    <Content Include="Views\Shared\_modal.cshtml" />
+    <Content Include="Views\Threading\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -149,7 +149,48 @@ namespace clientweb.Controllers
             return View();
         }
 
+        public JsonResult RegisterEmail(string email)
+        {
+            string flag = "FAIL";
+            try
+            {
+                WEB_EmailRecieve r = new WEB_EmailRecieve();
+                r.EmailAddress = email;
+                r.Created = DateTime.Now;
 
+                db.WEB_EmailRecieve.Add(r);
+
+                db.SaveChanges();
+
+                flag = "DONE";
+            }
+            catch { flag = "FAIL"; }
+            
+            return Json(flag, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult SendMessage(string first, string last, string email, string content)
+        {
+            string flag = "FAIL";
+
+            try
+            {
+                WEB_GuestMessage g = new WEB_GuestMessage();
+                g.Content = content;
+                g.Created = DateTime.Now;
+                g.Email = email;
+                g.FirstName = first;
+                g.LastName = last;
+                db.WEB_GuestMessage.Add(g);
+
+                db.SaveChanges();
+
+                flag = "DONE";
+
+            }
+            catch { flag = "FAIL"; }
+            return Json(flag, JsonRequestBehavior.AllowGet);
+        }
 
 
     }

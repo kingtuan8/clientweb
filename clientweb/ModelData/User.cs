@@ -23,6 +23,7 @@ namespace clientweb.ModelData
             RolesUsers = new HashSet<RolesUser>();
             TransportTruckLinks = new HashSet<TransportTruckLink>();
             Users1 = new HashSet<User>();
+            WEB_Thread = new HashSet<WEB_Thread>();
         }
 
         public int UserID { get; set; }
@@ -30,7 +31,7 @@ namespace clientweb.ModelData
         [StringLength(20)]
         public string UserName { get; set; }
 
-        [StringLength(68)]
+        [StringLength(108)]
         public string HashPass { get; set; }
 
         public bool? Active { get; set; }
@@ -80,5 +81,8 @@ namespace clientweb.ModelData
         public virtual UsersIsCustomer UsersIsCustomer { get; set; }
 
         public virtual UsersIsEmployee UsersIsEmployee { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<WEB_Thread> WEB_Thread { get; set; }
     }
 }

@@ -40,12 +40,12 @@ namespace clientweb.ModelData
 
         public virtual Booking Booking { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ContainerHistory> ContainerHistories { get; set; }
+        public virtual ContainerInvoice ContainerInvoice { get; set; }
 
         public virtual ContainerTransport ContainerTransport { get; set; }
 
-        public virtual ContainerInvoice ContainerInvoice { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ContainerHistory> ContainerHistories { get; set; }
 
         public virtual User User { get; set; }
 

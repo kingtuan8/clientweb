@@ -38,6 +38,11 @@ namespace clientweb.ModelData
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<UsersIsCustomer> UsersIsCustomers { get; set; }
         public virtual DbSet<UsersIsEmployee> UsersIsEmployees { get; set; }
+        public virtual DbSet<WEB_EmailRecieve> WEB_EmailRecieve { get; set; }
+        public virtual DbSet<WEB_GuestMessage> WEB_GuestMessage { get; set; }
+        public virtual DbSet<WEB_Infomation> WEB_Infomation { get; set; }
+        public virtual DbSet<WEB_Slide> WEB_Slide { get; set; }
+        public virtual DbSet<WEB_Thread> WEB_Thread { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -66,11 +71,11 @@ namespace clientweb.ModelData
                 .IsUnicode(false);
 
             modelBuilder.Entity<Container>()
-                .HasOptional(e => e.ContainerTransport)
+                .HasOptional(e => e.ContainerInvoice)
                 .WithRequired(e => e.Container);
 
             modelBuilder.Entity<Container>()
-                .HasOptional(e => e.ContainerInvoice)
+                .HasOptional(e => e.ContainerTransport)
                 .WithRequired(e => e.Container);
 
             modelBuilder.Entity<Container>()
@@ -295,6 +300,35 @@ namespace clientweb.ModelData
             modelBuilder.Entity<User>()
                 .HasOptional(e => e.UsersIsEmployee)
                 .WithRequired(e => e.User);
+
+            modelBuilder.Entity<User>()
+                .HasMany(e => e.WEB_Thread)
+                .WithOptional(e => e.User)
+                .HasForeignKey(e => e.CreatedBy);
+
+            modelBuilder.Entity<WEB_EmailRecieve>()
+                .Property(e => e.EmailAddress)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<WEB_GuestMessage>()
+                .Property(e => e.Email)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<WEB_Infomation>()
+                .Property(e => e.Typed)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<WEB_Slide>()
+                .Property(e => e.SlideImage)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<WEB_Thread>()
+                .Property(e => e.ThreadImage)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<WEB_Thread>()
+                .Property(e => e.URLRewrite)
+                .IsUnicode(false);
         }
     }
 }
